@@ -22,9 +22,9 @@ public class MainGUI extends JFrame {
 	}
 	@SuppressWarnings("deprecation")
 	public void btnShowAll_click() {
-		ShowAllGUI showallgui= new ShowAllGUI();
-		showallgui.show_contacts();
-		showallgui.show();
+		//ShowAllGUI showallgui= new ShowAllGUI();
+		//showallgui.show_contacts();
+		//showallgui.show();
 	}
 	public MainGUI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -53,10 +53,8 @@ public class MainGUI extends JFrame {
 		btnShow.setBounds(153, 114, 117, 29);
 		contentPane.add(btnShow);
 		
-
 	}
-	public void show() {
-		// TODO Auto-generated method stub
-		
-	}
+	
+	
+	
 }
