@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class FileManager {
 	public File text = new File("data.txt");
-	/*
+	
 	public boolean save(Object t) {
 		boolean result;
 		
@@ -18,7 +18,8 @@ public class FileManager {
 		}
 		return result;
 	}
-	*/
+	
+	/*
 	public void WritetoFile() {
 	    try {
 	        FileWriter myWriter = new FileWriter(text);
@@ -31,6 +32,7 @@ public class FileManager {
 	        e.printStackTrace();
 	      }
 	}
+	*/
 	public String get_all() {
 		Scanner scanner;
 		String result="<html>";
@@ -53,7 +55,7 @@ public class FileManager {
 		Scanner scanner;
 		try {
 			scanner = new Scanner(text);
-			while(scanner.hasNextLine()) {
+			while(scanner.hasNextFloat()) {
 				finalAmount+=scanner.nextFloat();
 			}
 			scanner.close();
