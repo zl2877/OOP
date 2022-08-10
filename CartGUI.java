@@ -11,15 +11,26 @@ import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.JScrollPane;
+import javax.swing.ScrollPaneConstants;
+import javax.swing.JScrollBar;
 
 public class CartGUI extends JFrame {
 
 	private JPanel contentPane;
 	private JLabel lblResults;
+	private JLabel lblItems;
 	private JButton btnClose;
-	private JButton btnNewButton;
+	private JButton btnAdd;
 	
+	
+		
 	public void btnCheck_click(){
+		FileManager filemanager=new FileManager();
+		filemanager.clear();
+		filemanager.count=0;
 		CheckGUI checkgui=new CheckGUI();
 		checkgui.show();
 		
@@ -43,28 +54,39 @@ public class CartGUI extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+
 		lblResults = new JLabel("");
 		lblResults.setVerticalAlignment(SwingConstants.TOP);
-		lblResults.setBounds(45, 29, 361, 144);
+		lblResults.setBounds(22, 32, 390, 181);
 		contentPane.add(lblResults);
+		show_order();
 		
 		btnClose = new JButton("Check Out");
+		btnClose.setForeground(new Color(250, 128, 114));
 		btnClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnCheck_click();
 			}
 		});
-		btnClose.setBounds(258, 202, 117, 29);
+		btnClose.setBounds(261, 237, 117, 29);
 		contentPane.add(btnClose);
 		
-		btnNewButton = new JButton("Add More");
-		btnNewButton.addActionListener(new ActionListener() {
+		btnAdd = new JButton("Add More");
+		btnAdd.setForeground(new Color(250, 128, 114));
+		btnAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnAdd_click();
 			}
 		});
-		btnNewButton.setBounds(106, 202, 117, 29);
-		contentPane.add(btnNewButton);
+		btnAdd.setBounds(84, 237, 117, 29);
+		contentPane.add(btnAdd);
+		
+		JLabel lblItems = new JLabel("Your items:");
+		lblItems.setForeground(new Color(255, 182, 193));
+		lblItems.setFont(new Font("Lucida Grande", Font.BOLD | Font.ITALIC, 14));
+		lblItems.setBounds(22, 16, 117, 16);
+		contentPane.add(lblItems);
+		
+		
 	}
-
 }
