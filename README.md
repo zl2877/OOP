@@ -20,4 +20,4 @@ We are thinking about this system as something that can be used as a web page or
 ## System Inputs and Outputs: 
 The system’s input will be from the user’s choice For our system we are thinking about storing the data (information of the user’s selection) in a file. Furthermore, the file that stores data of each order could be used by the store manager to review the sales of the bubble tea shop, so as to provide better help for improving management and operation.
 ### Contributor
-@gzisk @zl2877 @jiongyun
+[@zl2877](https://github.com/zl2877) [@gzisk](https://github.com/gzisk) [@jiongyun](https://github.com/jiongyun)
