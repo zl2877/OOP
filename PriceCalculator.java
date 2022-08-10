@@ -1,7 +1,7 @@
 package BubbleTea;
 
 public class PriceCalculator {
-	  public String topping;
+	  	public String topping;
 	    public String size;
 		public float toppingPrice;
 		public float sizePrice;
