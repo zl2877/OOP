@@ -1,5 +1,5 @@
 # Order system for bubble tea
-_Example_:  
+***Example***:  
 ![image](https://github.com/zl2877/OOP/blob/main/bobademo.gif)
 ## General Description
 The system that we want to implement is an online ordering system for bubble tea. 
