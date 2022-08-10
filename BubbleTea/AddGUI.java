@@ -14,19 +14,16 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 
 public class AddGUI extends JFrame {
 
 	private JPanel contentPane;
-	private JLabel lbl1;
-	private JLabel lbl2;
-	private JLabel lbl3;
-	private JLabel lbl4;
-	private JLabel lbl5;
-	private JLabel lbl6;
-	private JComboBox Tea;
+
+	private JComboBox CTea;
 	private JComboBox toppings;
 	private JComboBox sugar;
 	private JComboBox ice;
@@ -44,14 +41,27 @@ public class AddGUI extends JFrame {
 
 	public void btnCart_click(){
 		PriceCalculator p=new PriceCalculator();
+		
 		price=p.calculate(toppingtype,size_level);
+		
+		try {
 		Tea cup=new Tea(teatype,toppingtype,sugar_level,ice_level,size_level,price);
+		
 		FileManager filemanager=new FileManager();
 		filemanager.save(cup);
 		total+=price;
+		
 		CartGUI cartgui=new CartGUI();
 		cartgui.show();
+		}catch(Exception e) {
+			System.out.println("Error dedected ");
+		}
 		
+	}
+	public void warn_click(String message) {
+		
+		WarningGUI warn = new WarningGUI(message);
+		warn.show();
 	}
 	public AddGUI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -62,44 +72,46 @@ public class AddGUI extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		JLabel welcomemsg = new JLabel("Customize your boba tea with us:");
+		welcomemsg.setForeground(new Color(240, 128, 128));
+		welcomemsg.setFont(new Font("Lucida Grande", Font.BOLD | Font.ITALIC, 14));
+		welcomemsg.setBounds(55, 37, 258, 16);
+		contentPane.add(welcomemsg);
+		
 		JLabel lbl2 = new JLabel("Classic Teas:");
 		lbl2.setForeground(new Color(51, 153, 51));
 		lbl2.setBounds(55, 75, 93, 21);
 		contentPane.add(lbl2);
 		
-		JComboBox Tea = new JComboBox();
-		Tea.setBounds(212, 72, 186, 29);
-		Tea.setForeground(UIManager.getColor("Button.select"));
-		Tea.addItem("Please select");
-		Tea.addItem("Jasmine Green Tea");
-		Tea.addItem("Jasmine Grey Tea");
-		Tea.addItem("Earl Grey Tea");
-		Tea.addItem("Roasted Oolong Tea");
-		Tea.addItem("Black Tea");
-		Tea.addItem("Rose Tea");
-		contentPane.add(Tea);
+		this.CTea = new JComboBox();
+		CTea.setBounds(212, 72, 186, 29);
+		CTea.setForeground(UIManager.getColor("Button.select"));
+		CTea.addItem("Please select");
+		CTea.addItem("Jasmine Green Tea");
+		CTea.addItem("Jasmine Grey Tea");
+		CTea.addItem("Earl Grey Tea");
+		CTea.addItem("Roasted Oolong Tea");
+		CTea.addItem("Black Tea");
+		CTea.addItem("Rose Tea");
+		contentPane.add(CTea);
 		
-		Tea.addActionListener(new ActionListener() {
+		CTea.addActionListener(new ActionListener() {
 		      public void actionPerformed(ActionEvent e) {
-		       Object tt = Tea.getSelectedItem();
+		       Object tt = CTea.getSelectedItem();
 		              if (tt != null ) { 
 		                 teatype=tt.toString();
 		              } 
 		      }
 		  });
 		
-		JLabel lbl1 = new JLabel("Customize your boba tea with us:");
-		lbl1.setForeground(new Color(240, 128, 128));
-		lbl1.setFont(new Font("Lucida Grande", Font.BOLD | Font.ITALIC, 14));
-		lbl1.setBounds(55, 37, 258, 16);
-		contentPane.add(lbl1);
+
 		
-		JLabel lbl3 = new JLabel("Toppings:");
-		lbl3.setForeground(new Color(0, 153, 255));
-		lbl3.setBounds(55, 109, 84, 16);
-		contentPane.add(lbl3);
+		JLabel topmsg = new JLabel("Topping:");
+		topmsg.setForeground(new Color(0, 153, 255));
+		topmsg.setBounds(55, 109, 84, 16);
+		contentPane.add(topmsg);
 		
-		JComboBox toppings = new JComboBox();
+		this.toppings = new JComboBox();
 		toppings.setForeground(new Color(153, 51, 204));
 		toppings.setBounds(212, 104, 186, 29);
 		toppings.addItem("Please select");
@@ -111,6 +123,8 @@ public class AddGUI extends JFrame {
 		toppings.addItem("Herbal Jelly");
 		toppings.addItem("Pudding");
 		toppings.addItem("No topping");
+		
+		
 		contentPane.add(toppings);
 		
 		toppings.addActionListener(new ActionListener() {
@@ -118,11 +132,13 @@ public class AddGUI extends JFrame {
 		       Object t = toppings.getSelectedItem();
 		              if (t != null ) { 
 		                 toppingtype=t.toString();
-		              } 
+		              }else {
+		            	  toppingtype = "No topping";
+		              }
 		      }
 		  });
 		
-		JComboBox sugar = new JComboBox();
+		this.sugar = new JComboBox();
 		sugar.setForeground(new Color(0, 51, 255));
 		sugar.setBounds(212, 139, 186, 21);
 		sugar.addItem("Please select");
@@ -153,7 +169,7 @@ public class AddGUI extends JFrame {
 		lbl4.setBounds(55, 137, 100, 16);
 		contentPane.add(lbl4);
 		
-		JComboBox ice = new JComboBox();
+		this.ice = new JComboBox();
 		ice.setForeground(new Color(0, 51, 51));
 		ice.setBounds(212, 163, 186, 29);
 		ice.addItem("Please select");
@@ -171,7 +187,7 @@ public class AddGUI extends JFrame {
 		      }
 		  });
 		
-		JComboBox size = new JComboBox();
+		this.size = new JComboBox();
 		size.setForeground(new Color(51, 204, 204));
 		size.setBounds(212, 191, 186, 28);
 		size.addItem("Please select");
@@ -199,7 +215,37 @@ public class AddGUI extends JFrame {
 		contentPane.add(btnCart);
 		btnCart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				List<String> messages = new ArrayList<String>();
+				if (teatype==null) {
+					messages.add("Tea");
+				}
+				if (toppingtype==null){
+					messages.add("Topping");
+				}
+				if (sugar_level==null) {
+					messages.add("Suger Level");
+				}
+				if (ice_level==null) {
+					messages.add("Ice Level");
+				}
+				if (size_level==null) {
+					messages.add("Size Level");
+				}
+				if(messages.size() != 0) {
+					StringBuilder warn = new StringBuilder();
+					int counter = messages.size();
+					for(String message : messages) {
+						warn.append(message);
+						counter --;
+						if(counter != 0)
+							warn.append(", ");
+					}
+					
+					warn_click(warn.toString());
+				}else {
+				
 				btnCart_click();
+			}
 			}
 		});
 		
