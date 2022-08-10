@@ -1,17 +1,13 @@
 package BubbleTea;
 
-import java.util.ArrayList;
-
-
 public class Tea {
 	
-    String teaType;
-	String topping;
-	String sugar;
-	String ice;
-	String size;
-	float price;
-
+    private String teaType;
+	private String topping;
+	private String sugar;
+	private String ice;
+	private String size;
+	private float price;
 	
 	//constructor
 	public Tea(String tType, String t, String s, String i, String si, float p) {
@@ -50,7 +46,7 @@ public class Tea {
 	}
 
 	public String getIce() {
-		return sugar;
+		return ice;
 	}
 
 	public void setIce(String ice) {
@@ -75,11 +71,6 @@ public class Tea {
 
 	//return string representation
 	public String toString() {
-		
-		return teaType+ "\t"+ topping + "\t" + sugar + "\t" + ice +"\t"+size+"\t"+price;
+		return teaType+ "  "+ topping + "  " + sugar + "  " + ice +"  "+size+"  "+price;
 	}
-
-	
-
-
 }
