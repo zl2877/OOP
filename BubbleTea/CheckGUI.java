@@ -15,6 +15,7 @@ import java.awt.Font;
 
 public class CheckGUI extends JFrame {
 
+	protected static final String Jframe = null;
 	private JPanel contentPane;
 	private JLabel lblthank;
 	private JLabel lbltotal;
@@ -65,6 +66,15 @@ public class CheckGUI extends JFrame {
 		contentPane.add(lblprice);
 		AddGUI add=new AddGUI();
 		lblprice.setText(String.valueOf(add.total));
+		
+		JButton btnNewButton = new JButton("Exit");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
+		btnNewButton.setBounds(145, 189, 117, 29);
+		contentPane.add(btnNewButton);
 	}
 
 }

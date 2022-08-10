@@ -40,6 +40,7 @@ public class MainGUI extends JFrame {
 		btnStart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnAdd_click();
+				dispose();
 			}
 		});
 		btnStart.setBounds(161, 138, 117, 29);

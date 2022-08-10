@@ -66,6 +66,7 @@ public class CartGUI extends JFrame {
 		btnClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnCheck_click();
+				dispose();
 			}
 		});
 		btnClose.setBounds(261, 237, 117, 29);
@@ -76,6 +77,7 @@ public class CartGUI extends JFrame {
 		btnAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnAdd_click();
+				dispose();
 			}
 		});
 		btnAdd.setBounds(84, 237, 117, 29);

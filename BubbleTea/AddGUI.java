@@ -245,6 +245,7 @@ public class AddGUI extends JFrame {
 				}else {
 				
 				btnCart_click();
+				dispose();
 			}
 			}
 		});
