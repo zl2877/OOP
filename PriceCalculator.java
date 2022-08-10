@@ -1,33 +1,76 @@
 package BubbleTea;
 
-public class PriceCalculator {
-	  	public String topping;
-	    public String size;
-		public float toppingPrice;
-		public float sizePrice;
-		public float totalPrice;
-		
-
-		public float calculate(String topping, String size) {
-			
-			totalPrice = 5;
-			if (topping.equalsIgnoreCase("no topping")) {
-				totalPrice+=0;
-			}
-			else {
-				totalPrice+=1;
-			}
-			
-			if (size.equalsIgnoreCase("small")) {
-				totalPrice+=0;
-			}
-			else if (size.equalsIgnoreCase("regular")) {
-				totalPrice+=1;
-			}
-			else if (size.equalsIgnoreCase("large")) {
-				totalPrice+=2;
-			}
-			return totalPrice;
-		}
+public class Tea {
+	
+    private String teaType;
+	private String topping;
+	private String sugar;
+	private String ice;
+	private String size;
+	private float price;
+	
+	//constructor
+	public Tea(String tType, String t, String s, String i, String si, float p) {
+		teaType = tType;
+		topping = t;
+		sugar =s;
+		ice=i;
+		size=si;
+		price=p;
 		
 	}
+	
+	//getters and setters
+	public String getTeaType() {
+		return teaType;
+	}
+
+	public void setTeaType(String teaType) {
+		this.teaType = teaType;
+	}
+
+	public String getTopping() {
+		return topping;
+	}
+
+	public void setTopping(String topping) {
+		this.topping = topping;
+	}
+
+	public String getSugar() {
+		return sugar;
+	}
+
+	public void setSugar(String sugar) {
+		this.sugar = sugar;
+	}
+
+	public String getIce() {
+		return ice;
+	}
+
+	public void setIce(String ice) {
+		this.ice = ice;
+	}
+	
+	public String getSize() {
+		return size;
+	}
+
+	public void setSize(String size) {
+		this.size = size;
+	}
+
+	public float getPrice() {
+		return price;
+	}
+
+	public void setPrice(float price) {
+		this.price = price;
+	}
+
+	//return string representation
+	public String toString() {
+		return teaType+ "  "+ topping + "  " + sugar + "  " + ice +"  "+size+"  "+price;
+	}
+}
