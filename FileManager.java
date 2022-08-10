@@ -3,64 +3,52 @@ import java.io.*;
 import java.util.Scanner;
 
 public class FileManager {
+	public static int count;
 	//public File text = new File("bubbletea.txt");
+	public void clear() {
+		File file = new File("bubbletea.txt");
+		if(file.exists()){
+		    file.delete();
+		}
+	}
 	
-	public boolean save(Object t) {
+	public boolean save(Tea t) {
 		boolean result;
-		
 		try {
 			FileWriter fw=new FileWriter("bubbletea.txt",true);
-			fw.write(t.toString());
+			count++;
+			fw.write("Item "+count+": ");
+			fw.write(t.getTeaType()+"\n");
+			fw.write("(Customize: +"+t.getTopping()+"/"+t.getSugar()+" /"+t.getIce()+" /"+t.getSize()+")"+"\n");
+			fw.write("Price: "+t.getPrice()+"\n");
 			fw.close();
 			result=true;
 		} catch (IOException e) {
 			e.printStackTrace();
 			result=false;
 		}
+
 		return result;
+		
 	}
 	
-	/*
-	public void WritetoFile() {
-	    try {
-	        FileWriter myWriter = new FileWriter(text);
-	        myWriter.write("teatype topping sugar ice 5");
-	        myWriter.write("teatype topping sugar ice 6");
-	        myWriter.close();
-	        System.out.println("wrote to the file.");
-	      } catch (IOException e) {
-	        System.out.println("An error occurred.");
-	        e.printStackTrace();
-	      }
-	}
-	*/
 	public String get_all() {
 		Scanner scanner;
-		String result="<html>";
+		String result = "<html><font color='green'font size='1.2'>";
+
 		try {
-			
 			scanner = new Scanner(new File("bubbletea.txt"));
-			
-			while(scanner.hasNextLine()) {
-				result+=scanner.nextLine()+"<br>";
+		while(scanner.hasNextLine())
+			{
+				result+= scanner.nextLine()+"<br/>";
+				
 			}
 			scanner.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		result+="</html>";
+		result+="</font>"+"</html>";
 		return result;
 	}
-	public float calculateTotal(Object t){
-		float finalAmount=0;
-		Scanner scanner;
-		scanner = new Scanner("bubbletea.txt");
-		while(scanner.hasNextFloat()) {
-			finalAmount+=scanner.nextFloat();
-		}
-		scanner.close(); 
-		
-		return finalAmount;
-		
-	}
+
 }
