@@ -1,14 +1,15 @@
+package BubbleTea;
 import java.io.*;
 import java.util.Scanner;
 
 public class FileManager {
-	public File text = new File("data.txt");
+	//public File text = new File("bubbletea.txt");
 	
 	public boolean save(Object t) {
 		boolean result;
 		
 		try {
-			FileWriter fw=new FileWriter(text,true);
+			FileWriter fw=new FileWriter("bubbletea.txt",true);
 			fw.write(t.toString());
 			fw.close();
 			result=true;
@@ -38,7 +39,7 @@ public class FileManager {
 		String result="<html>";
 		try {
 			
-			scanner = new Scanner(text);
+			scanner = new Scanner(new File("bubbletea.txt"));
 			
 			while(scanner.hasNextLine()) {
 				result+=scanner.nextLine()+"<br>";
@@ -53,18 +54,13 @@ public class FileManager {
 	public float calculateTotal(Object t){
 		float finalAmount=0;
 		Scanner scanner;
-		try {
-			scanner = new Scanner(text);
-			while(scanner.hasNextFloat()) {
-				finalAmount+=scanner.nextFloat();
-			}
-			scanner.close();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} 
+		scanner = new Scanner("bubbletea.txt");
+		while(scanner.hasNextFloat()) {
+			finalAmount+=scanner.nextFloat();
+		}
+		scanner.close(); 
 		
 		return finalAmount;
 		
 	}
 }
-
