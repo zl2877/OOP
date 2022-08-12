@@ -1,5 +1,9 @@
 package BubbleTea;
 
+import java.util.ArrayList;
+
+
+
 public class Tea {
 	
     private String teaType;
@@ -8,6 +12,8 @@ public class Tea {
 	private String ice;
 	private String size;
 	private float price;
+	public static ArrayList<Tea> cups = new ArrayList<Tea>();
+	
 	
 	//constructor
 	public Tea(String tType, String t, String s, String i, String si, float p) {
@@ -17,8 +23,9 @@ public class Tea {
 		ice=i;
 		size=si;
 		price=p;
-		
 	}
+	
+	
 	
 	//getters and setters
 	public String getTeaType() {
