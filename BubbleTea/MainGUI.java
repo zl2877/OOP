@@ -21,11 +21,7 @@ public class MainGUI extends JFrame {
 	private JButton btnStart;
 	private JLabel lblWelcome;
 	
-	@SuppressWarnings("deprecation")
-	public void btnCart_click() {
-		CartGUI cartgui=new CartGUI();
-		cartgui.show();
-	}
+	
 	public void btnAdd_click() {
 		AddGUI addgui=new AddGUI();
 		addgui.show();
