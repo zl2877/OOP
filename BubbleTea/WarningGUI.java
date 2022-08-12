@@ -16,6 +16,8 @@ public class WarningGUI extends JFrame implements ActionListener {
 
 	private JPanel contentPane;
 	private JButton ok;
+	private JLabel lbl1;
+	private JLabel lbl2;
 	
 	public WarningGUI(String message) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -26,15 +28,15 @@ public class WarningGUI extends JFrame implements ActionListener {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("WARNING!");
-		lblNewLabel.setForeground(Color.RED);
-		lblNewLabel.setBounds(178, 19, 102, 16);
-		contentPane.add(lblNewLabel);
+		JLabel lbl1 = new JLabel("WARNING!");
+		lbl1.setForeground(Color.RED);
+		lbl1.setBounds(178, 19, 102, 16);
+		contentPane.add(lbl1);
 		
-		JLabel lblNewLabel_1 = new JLabel(message+" need to be set!");
-		lblNewLabel_1.setForeground(Color.RED);
-		lblNewLabel_1.setBounds(44, 112, 377, 16);
-		contentPane.add(lblNewLabel_1);
+		JLabel lbl2 = new JLabel(message+" need to be set!");
+		lbl2.setForeground(Color.RED);
+		lbl2.setBounds(17, 67, 427, 117);
+		contentPane.add(lbl2);
 		
 		ok = new JButton("OK");
 		ok.setBounds(148, 190, 117, 29);
