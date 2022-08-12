@@ -22,6 +22,10 @@ public class MainGUI extends JFrame {
 	private JLabel lblWelcome;
 	
 	@SuppressWarnings("deprecation")
+	public void btnCart_click() {
+		CartGUI cartgui=new CartGUI();
+		cartgui.show();
+	}
 	public void btnAdd_click() {
 		AddGUI addgui=new AddGUI();
 		addgui.show();
@@ -36,24 +40,23 @@ public class MainGUI extends JFrame {
 		contentPane.setLayout(null);
 		
 		btnStart = new JButton("Start Order");
+		
 		btnStart.setForeground(UIManager.getColor("Button.select"));
 		btnStart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnAdd_click();
-				dispose();
 			}
 		});
-		btnStart.setBounds(161, 138, 117, 29);
+		btnStart.setBounds(154, 121, 117, 29);
 		contentPane.add(btnStart);
 		
 		lblWelcome = new JLabel("Welcome to our online ordering system for bubble tea!");
 		lblWelcome.setFont(new Font("Lucida Grande", Font.ITALIC, 15));
 		lblWelcome.setForeground(Color.PINK);
-		lblWelcome.setBounds(27, 85, 417, 41);
+		lblWelcome.setBounds(27, 44, 417, 41);
 		contentPane.add(lblWelcome);
 		
+		
+		
 	}
-	
-	
-	
 }
