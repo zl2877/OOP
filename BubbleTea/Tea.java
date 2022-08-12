@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Tea {
 	
-    private String teaType;
+        private String teaType;
 	private String topping;
 	private String sugar;
 	private String ice;
