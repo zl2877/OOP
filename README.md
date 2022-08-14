@@ -17,6 +17,7 @@ This system’s main users are those who like bubble tea, and visit bubble tea s
 ## Goals
 We are thinking about this system as something that can be used as a web page or app on a mobile phone, so the user can order their drink while they are walking to the store. This will help to save their time so they don’t need to wait as long at the store.  
 ## System Inputs and Outputs
+The system’s input will be from the user’s choice, where the user can select their preference by selecting from the drop boxes. For our system, we are storing the data (information of the user’s selection) in a text file. Furthermore, the file that stores data of each order could be used by the store manager to review the sales of the bubble tea shop, so as to provide better help for improving management and operation.
 
 ### Contributor
 [@gzisk](https://github.com/gzisk) [@zl2877](https://github.com/zl2877)  [@jiongyun](https://github.com/jiongyun)
