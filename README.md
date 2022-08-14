@@ -7,6 +7,10 @@ After the selection process is finished, the user can add the tea to the shoppin
 Then the client will have the option to add more cups of tea (which takes them back to the tea selection page at the start) or check out (which is the end of the system).
 If the user selects “check out”, the client can place the order and a final price will be displayed.
 
+## Benefits
+This system is particularly useful for when the customer wants to save time by ordering before they arrive in the store. Therefore when they arrive at the store, they can immediately get the drink and do not have to wait in the long queue. 
+This is also really good for customers that are not familiar with the menu, as they can avoid the awkwardness of having to be put on the spot in the store by being able to look at what is available beforehand and having more time to decide what they want. 
+This system also makes it easier for customers to customize their drink (e.g. selecting ice/sugar level, adding other ingredients), as they can see what they selected on their screens. 
 
 ### Contributor
 [@gzisk](https://github.com/gzisk) [@zl2877](https://github.com/zl2877)  [@jiongyun](https://github.com/jiongyun)
