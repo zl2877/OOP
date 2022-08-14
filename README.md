@@ -15,6 +15,8 @@ This system also makes it easier for customers to customize their drink (e.g. se
 ## User
 This system’s main users are those who like bubble tea, and visit bubble tea stores. This system is for users who are familiar with operating a mobile device. This is intended for users who are in a rush, by using this, they can save time. It is also for users who feel more comfortable without having to interact with a waiter/waitress at the counter.
 ## Goals
+We are thinking about this system as something that can be used as a web page or app on a mobile phone, so the user can order their drink while they are walking to the store. This will help to save their time so they don’t need to wait as long at the store.  
+## System Inputs and Outputs
 
 ### Contributor
 [@gzisk](https://github.com/gzisk) [@zl2877](https://github.com/zl2877)  [@jiongyun](https://github.com/jiongyun)
